@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 0 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+body {
+    background-image: url('20220302_144158.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute; 
+    top: 350px; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 80%; 
+}
+
+.welcome-text {
+    color: white;
+    font-weight: bold;
+    font-size: 90px;
+    margin-bottom: 20px;
+}
+ 
+.explore-btn {
+    background-color: #ffa07a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 250px;
+    font-size: 20px;
+}
+
+.quote {
+    color: white;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+    font-size: 25px;
+}
+
+.about-us-section {
+    display: none;
+    padding: 100px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    color: white;
+}
+
+.about-us-section p {
+    font-size: 19px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-us-section.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.Logo img {
+    width: 150px; 
+    height: auto;
+}
+
+.about-us-logo{
+    width: 500px; 
+    height: auto;
+}
+
+.navbar {
+    display: flex; 
+    gap: 20px; 
+    height: 100%;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar .btnLoginPopup {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.navbar .btnLoginPopup::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: white;
+    opacity: .85;
+}
+
+.section {
+    background: url('IMG_5689.jpg') no-repeat;
+    min-height: 100vh;
+    background-color: lightblue; 
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    box-shadow: -1px 0 10px rgba(0, 0, 0, .2);
+    border-left: 2px solid rgba(255, 255, 255, .1);
+    z-index: 100;
+    display: none; 
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    opacity: 0; 
+    pointer-events: none; 
+}
+
+.wrapper.active-popup {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+}
+
+.icon-close i {
+    font-size: 32px;
+    color: #333;
+}
+
+.icon-close-about {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-close-about i {
+    font-size: 32px;
+    color: black;
+}
+
+.wrapper .logreg-box {
+    width: 100%;
+}
+
+.wrapper .form-box.login {
+    display: block;
+}
+
+.wrapper.active .form-box.login {
+    display: none;
+}
+
+.wrapper .form-box.register{
+    display: none;
+}
+
+.wrapper.active .form-box.register{
+    display: block;
+}
+
+
+.logreg-box .logreg-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.logreg-title h2 {
+    font-size: 32px;
+}
+
+.logreg-title p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.logreg-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    border-bottom: 2px solid white;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    padding-right: 25px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px
+}
+
+.input-box .icon{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 19px;
+    color: white;
+}
+
+.logreg-box .remember-forgot {
+    font-size: 14.5px;
+    color: white;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: white;
+    margin-right: 3px;  
+}
+
+.remember-forgot a {
+    color: white;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.logreg-box .btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size: 16px;
+    color: #222;
+    font-weight: 600;
+}
+
+.logreg-box .logreg-link {
+    font-size: 14.5px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 15px;
+}
+
+.logreg-link p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logreg-link p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logreg-link p a:hover {
+    text-decoration: underline;
+}
+
+.media-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.media-options a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    border-radius: 40px;
+    color: white;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.media-options a:hover {
+    background: rgb(255, 255, 255, .1);
+}
+
+.media-options a i {
+    font-size: 22px;
+    margin: 0 8px 1.5px 0;
+}
+
+
+.media-options a span {
+    font-size: 16px;
+    font-weight: 500;
+}
